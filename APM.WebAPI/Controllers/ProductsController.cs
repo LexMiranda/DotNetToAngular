@@ -39,13 +39,18 @@ namespace APM.WebAPI.Controllers
         }
 
         // POST: api/Products
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Product product)
         {
+            var repo = new ProductRepository();
+            repo.Save(product);
+
         }
 
         // PUT: api/Products/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Product product)
         {
+            var repo = new ProductRepository();
+            repo.Save(product);
         }
 
         // DELETE: api/Products/5
